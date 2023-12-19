@@ -151,15 +151,19 @@
 
 <script>
 
-	const timer = document.getElementById('id_time')
+	const timer = document.querySelectorAll('input[name="time"]')
+	console.log(timer)
 	M.Timepicker.init(timer, {
 		twelveHour: false,
 	})
 
-	const select = document.querySelector('select');
-	M.FormSelect.init(select, {})
+	const mealSelect = document.querySelectorAll('select[name="meal"]');
+	M.FormSelect.init(mealSelect, {})
 
-	const dateEl = document.getElementById('id_date');
+	const typeSelect = document.querySelectorAll('select[name="type"]');
+	M.FormSelect.init(typeSelect, {})
+
+	const dateEl = document.querySelectorAll('input[name="date"]')
 
 	// M is Materialize's global variable
 	M.Datepicker.init(dateEl, {
