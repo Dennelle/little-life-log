@@ -7,7 +7,7 @@ WORKDIR /app
 COPY poetry.lock pyproject.toml /app/
 
 RUN pip3 install poetry
-RUN poetry install 
+RUN poetry install
 
 
 COPY . .
@@ -21,4 +21,4 @@ ENV DJANGO_SECRET_KEY "secakljsdfalsdjfai382342"
 
 RUN poetry run python manage.py collectstatic --noinput
 
-CMD poetry run daphne -b 0.0.0.0 -p 8080 littlelifelog.asgi:application
+CMD poetry run daphne -b 0.0.0.0 -p 8000 littlelifelog.asgi:application
